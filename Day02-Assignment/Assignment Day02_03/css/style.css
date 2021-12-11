@@ -1,0 +1,123 @@
+/* html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(152, 158, 152, 0.842);
+  }
+  .further-info{
+    background-color: red;
+  }
+   
+   .info{
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+   }
+   .middle{
+     background-color: royalblue;
+   }
+   .red-panda{
+     background-color: saddlebrown;
+   }
+   .header{
+     background-color: salmon;
+   } */
+
+   html, body {
+    height: 100%;
+    margin: 0;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYWvpGSdCYrprHTK9-rWcVdE_PeuX3WLYHfg&usqp=CAU');
+  }
+.main-div{
+
+  height: 100%;
+  margin-left: 120px;
+  margin-right: 120px;
+}
+   .div1{
+     background-color: #ffffff ;
+     margin: 0px;
+     height: 90px;
+   }
+  .div1 h1{
+    padding-top: 25px;
+    font-family: sans-serif;
+    margin: 0 0 0 15px;
+    text-align: left;
+  }
+  .div1 img{
+    margin: -48px 15px 0 0px;
+    float: right;
+   
+ 
+  }
+
+   .div2{
+    background-color: grey;
+    margin-top: 0px;
+    padding: 0;
+    height: 55%;
+  }
+ .section1{
+  align-content: center;
+  margin: 0 0 0 0;
+  border-radius: 10px;
+  display: block;
+  float: left;
+  width: 40%;
+}
+.section1 iframe{
+  align-self: right;
+  margin-top: 25px;
+  margin-left: 20px; 
+}
+
+.section2{
+
+margin: 0 0 0 0;
+border-radius: 10px;
+display: block;
+float: right;
+width: 60%;
+text-align: justify;
+text-justify: inter-word;
+
+font-size: medium;
+line-height: 1.5;
+}
+.section2 p1{
+  margin-top: 0;
+}
+  .div3{
+    background-color:#cd3636;
+    margin-top: 0px;
+    height: 35%;
+  }
+  .further-info{
+    margin-left: 50px;
+    margin-right: -15px;
+  }
+  .info{
+    margin-top: 13px;
+    float: left;
+    width: 23%;
+    padding: 10px;
+  }
+  .info img{
+    height: 120px;
+    width: 142px;
+  }
+  .div4{
+    background-color: green;
+    margin-top: 0px;
+    height: 60%;
+  }
+.div4 img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
