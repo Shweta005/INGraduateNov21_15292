@@ -1,0 +1,36 @@
+<!-- <h2>USER {{user.firstName | uppercase }} </h2>
+<div>
+  <label for="id"> User  Id: </label>
+  <input id="Id" [(ngModel)]="user.id" placeholder="Id"><br/><br>
+  <label for="fname">Firstname: </label>
+  <input id="fname" [(ngModel)]="user.firstName" placeholder="Firstname"><br/><br>
+  <label for="lname">Lastname: </label>
+  <input id="lname" [(ngModel)]="user.lastName" placeholder="Lastname"><br/><br>
+  <label for="mble">MobileNo: </label>
+  <input id="mobile" [(ngModel)]="user.mbleNo" placeholder="Mobile">
+</div> -->
+
+<h3>UserList(List component)</h3>
+<h2>Users List</h2>
+<ul class="users">
+  <li *ngFor="let user of users"
+    [class.selected]="user === selectedUser"
+    (click)="onSelect(user)">
+    <span class="badge">{{user.id}}.</span> {{user.firstName}}
+  </li>
+</ul>
+
+<div *ngIf="selectedUser">
+
+  <h2>{{selectedUser.firstName | uppercase}} Details</h2>
+  <div><span>User id: </span>{{selectedUser.id}}</div><br/>
+  <div>
+
+    <label for="user-name">First name: </label>
+    <input id="user-name" [(ngModel)]="selectedUser.firstName" placeholder="name"><br/><br/>
+
+    <label for="user-name">Mobile No: </label>
+    <input id="user-name" [(ngModel)]="selectedUser.mbleNo" placeholder="name">
+  </div>
+
+</div>
