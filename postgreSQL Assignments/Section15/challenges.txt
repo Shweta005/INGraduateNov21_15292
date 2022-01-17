@@ -1,0 +1,34 @@
+--CHALLENGE1:create table for returns
+--should have id for the record,customerid,date returned,productid,quantity and orderid
+CREATE TABLE returns(
+  returnid SERIAL), 
+  customerid NUMERIC(4),
+  returneddate TIMESTAMP,
+  productid INT,
+  quantity SMALLINT,
+  orderid INTEGER
+);
+--Challenge2: alter table returns orderdate to order_date
+
+ALTER TABLE returns
+RENAME returneddate TO returned_date;
+
+--challenge3: rename table returns to bad_orders
+ALTER TABLE returns
+RENAME TO bad_orders;
+
+--Challenge4: on bad_orders table add a textfiled called reason
+ALTER TABLE bad_orders
+ADD COLUMN  reason text;
+
+--Challenge5: on bad_orders table remove reason filed
+ALTER TABLE bad_orders
+DROP COLUMN  reason;
+
+--Challenge6: on bad_orders table change the quantity filed to int(currently small int)
+ALTER TABLE bad_orders
+ALTER COLUMN  quantity SET DATA TYPE int;
+
+--Challenge7- Drop table bad_orders
+DROP TABLE bad_orders;
+

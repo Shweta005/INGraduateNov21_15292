@@ -1,0 +1,128 @@
+--Chellenge1: Drop table practices and recreate with two fileds
+practiceid integer and practice_field varchar(50) with both being not null
+DROP TABLE practices;
+CREATE TABLE practices(
+practiceid INT NOT NULL,
+practice_field VARCHAR(50) NOT NULL
+);
+
+--Challenge2: Make the lastname filed of employee table always have a value
+ALTER TABLE employee 
+ALTER COLUMN lastname SET NOT NULL;
+
+--Challenge3; Create table called pets with 2 fileds:
+--petid integer that is unique
+--name varchar(25) and must not have null values
+CREATE TABLE pets(
+petid INTEGER UNIQUE,
+name VARCHAR(25) NOT NULL
+);
+
+--Challenge4:Make the companyname filed of shippers table is unique
+ALTER TABLE shippers
+ADD CONSTRAINT companyname_shippers UNIQUE(companyname);
+
+--Challenge5: Drop old pet table and create a table called pets with 2 fileds
+--petid integer that is the primary key
+--name varchar(25) and must not have null values
+DROP TABLE pets;
+CREATE TABLE pets(
+petid INTEGER PRIMARY KEY,
+name VARCHAR(25) NOT NULL
+);
+
+--Challenge6: Drop PK for pets and recreate
+ALTER TABLE pets
+DROP CONSTRAINT petid_pkey;
+
+ALTER TABLE pets
+ADD PRIMARY KEY(petid);
+
+--Challenge7: Drop pets table and create a table pets with 3 fileds:
+petid integer PK,name varchar(25) and must not have null values
+customerid char(5) which cant be null and a foreign key from customer table
+DROP TABLE pets;
+CREATE TABLE pets(
+petid INT PRIMARY KEY,
+name varchar(25) NOT NULL,
+customerid char(5) NOT NULL
+FOREIGN KEY(customerid) REFERENCES customer(customerid)
+
+);
+
+
+--Challenge8: Drop FK custid for pets and recreate
+ALTER TABLE pets
+DROP CONSTRAINT pets_customerid_fkey;
+
+ALTER TABLE pets
+ADD CONSTRAINT pets_customerid_fkey
+FOREIGN KEY(customerid) REFERENCES customer(customerid);
+
+--Challenge9:Drop old pets table and create new with4 field
+petid int PK
+name varchar(25) Not null
+customerid char(5) Not null nd a fk from customer table
+weight integer has to be grater than 0 nd less than 200
+
+CREATE TABLE pets(
+petid INT PRIMARY KEY,
+name varchar(50) NOT NULL,
+customerid INTEGER NOT NULL
+weight  INTEGER CONSTRIANT pets_weight CHECK(weight >= 0 AND weight<200)
+FOREIGN KEY customerid REFERENCES customer(customerid)
+);
+
+--Challenge 10: Add a check constraint that unitprice in products table must be positive
+ALTER TABLE products
+ADD CONSTRAINT products_unitprice 
+CHECKS(unitprice >0);
+
+--Challenge 11: Drop old pets table and create new with4 field
+petid int PK
+name varchar(25) Not null
+customerid char(5) Not null nd a fk from customer table
+weight integer has to be grater than 0 nd less than 200 & default 5
+
+petid INT PRIMARY KEY,
+name varchar(50) NOT NULL,
+customerid INTEGER NOT NULL
+weight  INTEGER DEFAULT 5 CONSTRIANT  pets_weight CHECK(weight >= 0 AND weight<200)
+FOREIGN KEY customerid REFERENCES customer(customerid)
+);
+
+--Challenge 12: set the default value reorderlevel in products table to 5
+ALTER TABLE products
+ADD COLUMN reorderlevel
+SET DEFAULT 5;
+
+--Challenge 13: make supplier homepage a default pf 'N/A'
+ALTER TABLE supplier
+ADD COLUMN homepage
+SET DEFAULT 'N/A';
+
+--Challenge 14: remove supplier homepage a default pf 'N/A'
+ALTER TABLE supplier
+ADD COLUMN homepage
+DROP DEFAULT;
+
+--Challenge15: Drop the not null constraint on discontinued column we added for orders
+ALTER TABLE orders
+DROP COLUMN discontinued DROP NOT NULL;
+
+--Challenge16: Add a check constraint to order_details column unitprice to make sure its a positive no
+ALTER TABLE order_details
+ADD CONSTRAINT order_details_unitprice
+CHECK(unitprice >0 );
+
+--Challenge 17-Add a not null constraint to discount in order_details
+ALTER TABLE order_details
+ALTER COLUMN discount SET NOT NULL
+
+--Challenge 18-Remove constraint
+ALTER TABLE order_details
+DROP CONSTRAINT order_details_unitprice
+
+ALTER TABLE order_details
+ALTER COLUMN discount DROP NOT NULL
+

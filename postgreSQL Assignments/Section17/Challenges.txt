@@ -1,0 +1,33 @@
+--Challenge1
+create a sequence named test_sequence_4 that increments by 7 and starts at 33
+CREATE SEQUENCE IF NOT EXISTS test_sequence_4
+INCREMENT 7
+START WITH 33;  //33,40,47
+--Challenge2
+Create a sequence and attach to orders orderid field be sure to start sequence at the right place
+CREATE SEQUENCE IF NOT EXISTS orders_orderid_seq
+START WITH 11078 OWNED BY orders.orderid;
+
+ALTER TABLE orders
+LATER COLUMN orderid SET DEFAULT nextval('orders_orderid_seq');
+
+--Challenge 3
+Change the orders_ordeerid_seq start with 200000
+ALTER SEQUENCE  orders_ordeerid_seq RESTART WITH 200000
+
+--Challenge4
+Change name of seq
+ALTER SEQUENCE  test_sequence_4 RENAME TO  test_sequence_four;
+
+--Challenge5
+Remove sequnce
+DROP SEQUNECE test_sequence_four;
+
+--Challenge 6
+create table named pets, should have id filed that increment automaticallu and name of pet
+CREATE TABLE pets(
+petid SERIAL,
+name varchar(255)
+);
+
+INSERT INTO pets (name) VALUES ('Moti') RETURNING petid;
