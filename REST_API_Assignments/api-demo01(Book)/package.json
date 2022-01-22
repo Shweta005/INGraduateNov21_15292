@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.14.0",
+    "sequelize-cli": "^6.4.1",
+    "yarn": "^1.22.17"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "api-demo01",
+  "version": "1.0.0",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
